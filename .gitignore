@@ -1,0 +1,5 @@
+# media files
+*.gif
+
+# config file
+twitter-connect.php

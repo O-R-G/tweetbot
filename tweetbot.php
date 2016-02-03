@@ -1,8 +1,11 @@
+#!/usr/bin/env php
 <?
+date_default_timezone_set("America/New_York");
 require_once("twitter-connect.php");
 
 // filename
-$file = "time.png";
+$time = date("h.i.s");
+$file = "clocks/".$time.".gif";
 $can_tweet = true;
 
 // should build this url programmatically from return JSON
@@ -23,7 +26,4 @@ if($connection && $can_tweet)
 }
 else
 	echo "tweet not sent.\n";
-
-// delete generated image
-unlink($file);
 ?>
