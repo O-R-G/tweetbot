@@ -8,8 +8,12 @@ $time = date("h.i.s");
 $file = "clocks/".$time.".gif";
 $can_tweet = true;
 
-// should build this url programmatically from return JSON
-$tweet_url = "https://twitter.com/org_clock/status/";
+$v = ($argv[1] == "verbose" or $argv[1] == "v");
+if($v)
+{
+	// should build this url programmatically from return JSON
+	$tweet_url = "https://twitter.com/org_clock/status/";
+}
 
 if($connection && $can_tweet)
 {
@@ -20,10 +24,10 @@ if($connection && $can_tweet)
 		'media_ids' => implode(',', [$media->media_id_string]),
 	];
 	$result = $connection->post('statuses/update', $parameters);
-
-	$can_tweet = false;
-	echo $tweet_url.$result->id_str."\n";
+	
+	if($v)
+		echo $tweet_url.$result->id_str."\n";
 }
-else
+else if($v)
 	echo "tweet not sent.\n";
 ?>
