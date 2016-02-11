@@ -1,0 +1,6 @@
+# use bash to run commands
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:.
+
+0 0 * * 0 /bin/bash /usr/www/users/reinfurt/META-THE-DIFFERENCE/src/mtdbt2f4d/mtdbt2f-release >> /usr/www/users/reinfurt/META-THE-DIFFERENCE/_log.txt 2>&1
+0 0 * * * /usr/www/users/reinfurt/tweetbot/cron/crontab-update.sh >> /usr/www/users/reinfurt/tweetbot/cron/log.txt

@@ -3,3 +3,8 @@
 
 # config file
 twitter-connect.php
+
+# logs are different per machine
+log.txt
+# same for crontab.txt
+crontab.txt
